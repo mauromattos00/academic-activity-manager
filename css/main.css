@@ -1,0 +1,58 @@
+body {
+	font-family: arial;
+}
+
+label, input[type=submit], input[type=text] {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+table {
+    width: 70%;
+}
+tr.title {
+    background: #efefef;
+}
+p.message {
+    color: green;
+}
+
+ label {
+        display: block;
+        font-weight: bold;
+        margin-top: 10px;
+ }
+ 
+ #menu {
+	font-weight: bold;
+	font-size: 1.2em;
+	background: #000;
+	padding: 1%;
+ }
+ 
+  #menu a {
+	text-decoration: none;
+	color: white;
+	margin-right: 2%;
+}
+
+  #menu a:hover {
+	color: silver;
+  }
+  
+  .error {
+	color: red;
+  }
+  
+  #manterLogado  {
+	font-size: .8em;
+  }
+  
+  #manterLogado input {
+	float: left;
+  }
+  
+  input {
+	border: 1px solid black;
+  }
