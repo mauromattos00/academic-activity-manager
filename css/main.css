@@ -2,10 +2,15 @@ body {
 	font-family: arial;
 }
 
-label, input[type=submit], input[type=text] {
+label, input[type=submit] {
     display: block;
     font-weight: bold;
     margin-top: 10px;
+}
+
+label.checkbox {
+	font-weight: normal;
+	margin: 0;
 }
 
 table {
@@ -31,15 +36,38 @@ p.message {
 	padding: 1%;
  }
  
-  #menu a {
+  #menu li a {
 	text-decoration: none;
 	color: white;
-	margin-right: 2%;
 }
 
-  #menu a:hover {
+  #menu li a:hover {
 	color: silver;
   }
+  
+  #menu li {
+	display: inline-block;
+	margin-right: 3%;
+  }
+  
+    ul#menu li ul {
+		position: absolute;
+		background: black;
+		padding: 1%;
+		display: none;
+	}
+	
+	#menu form {
+		position: absolute;
+		background: black;
+		color: white;
+		padding: 1%;
+		display: none;
+	}
+	
+	#menu input {
+		border: 1px solid white;
+	}
   
   .error {
 	color: red;
@@ -55,4 +83,8 @@ p.message {
   
   input {
 	border: 1px solid black;
+  }
+  
+  .ui-button {
+	font-size: .8em;
   }
