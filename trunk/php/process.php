@@ -9,25 +9,26 @@ $senha = isset($_POST['senha']) && $_POST['senha'] ? trim($_POST['senha']) : nul
 $confirmarSenha = isset($_POST['confirmarSenha']) && $_POST['confirmarSenha'] ? trim($_POST['confirmarSenha']) : null;
 
 if ($senha <> $confirmarSenha) {
-    header('Location: ../index.php?pagina=form&message=3');
+    header('Location: index.php?pagina=form&message=3');
+    exit;
 }
 
 if ($nome && $sobrenome && $email && $senha) {
     $sql = (isset($_GET['id_usuario']) && ($id_usuario = $_GET['id_usuario']))
             ? "UPDATE usuario SET nome='$nome', sobrenome='$sobrenome', email='$email' WHERE id_usuario = $id_usuario"
             : "INSERT INTO usuario (nome, sobrenome, email, senha) VALUES ('$nome', '$sobrenome', '$email', '$senha')";
-
+    
     $result = mysql_query($sql, $database);
 
     if ($result) {
-        header('Location: ../index.php?message=1');
+        header('Location: index.php?message=1');
         exit;
     } else {
-        header('Location: ../index.php?pagina=form&message=2');
+        header('Location: index.php?pagina=form&message=2');
         exit;
     }
 } else {
-    header('Location: ../index.php?pagina=form&message=1');
+    header('Location: index.php?pagina=form&message=1');
     exit;
 }
 ?>
