@@ -10,6 +10,9 @@ if (isset($_GET['message'])) {
         case 3:
             echo '<p>Os campos SENHA e CONFIRMAR SENHA devem ser iguais, tente novamente.</p>';
             break;
+        case 4:
+            echo '<p>Concluído!</p>';
+            break;
     }
 }
 
@@ -20,45 +23,36 @@ if (isset($_GET['id_usuario']) && ($id_usuario = $_GET['id_usuario'])) {
     if (mysql_num_rows($result) == 1) {
         $row = mysql_fetch_assoc($result);
         $nome = $row['nome'];
+        $sobrenome = $row['sobrenome'];
         $email = $row['email'];
+        $senha = $row['senha'];
     }
 }
 ?>
 
 <?php if (isset($id_usuario)): ?>
-    <h1>Editar Conta <?php echo $nome ?></h1>
+    <h1>Editar Dados - <?php echo $nome . " " . $sobrenome ?></h1>
 <?php else: ?>
-    <h1>Nova Conta</h1>
+    <h1>Novo Usuário</h1>
 <?php endif; ?>
-<html>
-    
-    <head>
-        <link rel="stylesheet" type="text/css" href="css/trontastic/jquery-ui-1.10.4.custom.min.css">
-        <link rel="stylesheet" type="text/css" href="css/main.css">
-        <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-        <script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
-        <script type="text/javascript" src="js/main.js"></script>
-    </head>
-    
-    <body>
-        <form action="process.php<?php echo isset($id_usuario) ? '?id_usuario=' . $id_usuario : '' ?>" method="post">
+
+        <form action="index.php?pagina=process<?php echo isset($id_usuario) ? '?id_usuario=' . $id_usuario : '' ?>" method="POST">
             <label for="nome">Nome</label>
-            <input type="text" name="nome" value="<?php echo isset($nome) ? $nome : '' ?>" />
+            <input type="text" name="nome" id="nome" value="<?php echo isset($nome) ? $nome : '' ?>" />
 
             <label for="sobrenome">Sobrenome</label>
-            <input type="text" name="sobrenome" value="<?php echo isset($sobrenome) ? $sobrenome : '' ?>" />
+            <input type="text" name="sobrenome" id="sobrenome" value="<?php echo isset($sobrenome) ? $sobrenome : '' ?>" />
 
             <label for="email">E-mail</label>
-            <input type="text" name="email" value="<?php echo isset($email) ? $email : '' ?>" />
+            <input type="text" name="email" id="email" value="<?php echo isset($email) ? $email : '' ?>" />
 
             <label for="senha">Senha</label>
-            <input type="password" maxlength="15" name="senha" value="<?php echo isset($senha) ? $senha : '' ?>"/>
+            <input type="password" maxlength="15" id="senha" name="senha" value="<?php echo isset($senha) ? $senha : '' ?>"/>
 
             <label for="confirmarSenha">Confirmar Senha</label>
-            <input type="password" maxlength="15" name="confirmarSenha" value="<?php echo isset($confirmarSenha) ? $confirmarSenha : '' ?>"/>
+            <input type="password" maxlength="15" id="confirmarSenha" name="confirmarSenha" value="<?php echo isset($senha) ? $senha : '' ?>"/>
 
             <input type="submit" value="Salvar" />
+            
             <a href="index.php" title="Cancelar">Cancelar</a>
         </form>
-    </body>
-</html>
