@@ -32,7 +32,7 @@ p.message {
  #menu {
 	font-weight: bold;
 	font-size: 1.2em;
-	background: #000;
+	background: #99B2B7;
 	padding: 1%;
  }
  
@@ -52,14 +52,14 @@ p.message {
   
     ul#menu li ul {
 		position: absolute;
-		background: black;
+		background: #99B2B7;
 		padding: 1%;
 		display: none;
 	}
 	
 	#menu form {
 		position: absolute;
-		background: black;
+		background: #99B2B7;
 		color: white;
 		padding: 1%;
 		display: none;
@@ -83,6 +83,7 @@ p.message {
   
   input {
 	border: 1px solid black;
+        border-radius: 5px;
   }
   
   .ui-button {
