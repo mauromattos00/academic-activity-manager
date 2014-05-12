@@ -10,6 +10,9 @@ if ($email && $senha) {
 	if (mysql_num_rows($result) == 1) {
 		session_start();
 		$row = mysql_fetch_assoc($result);
+		$_SESSION['id_usuario'] = $row['id_usuario'];
+		$_SESSION['nome'] = $row['nome'];
+		$_SESSION['sobrenome'] = $row['sobrenome'];
 		$_SESSION['email'] = $row['email'];
 				
 		if (isset($_POST['manterLogado']) && $_POST['manterLogado'] == '1') {
