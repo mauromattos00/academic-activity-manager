@@ -31,12 +31,12 @@ if (isset($_GET['id_usuario']) && ($id_usuario = $_GET['id_usuario'])) {
 ?>
 
 <?php if (isset($id_usuario)): ?>
-    <h1>Editar Dados - <?php echo $nome . " " . $sobrenome ?></h1>
+    <h1>Editar Dados</h1>
 <?php else: ?>
     <h1>Novo Usuário</h1>
 <?php endif; ?>
 
-        <form action="index.php?pagina=process<?php echo isset($id_usuario) ? '?id_usuario=' . $id_usuario : '' ?>" method="POST">
+        <form action="php/process.php<?php echo isset($id_usuario) ? '?id_usuario=' . $id_usuario : '' ?>" method="POST">
             <label for="nome">Nome</label>
             <input type="text" name="nome" id="nome" value="<?php echo isset($nome) ? $nome : '' ?>" />
 
