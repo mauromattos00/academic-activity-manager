@@ -24,19 +24,10 @@ include 'php/function.php';
 
             <?php if (taLogado()): ?>
                 <li>
-                    <a href="index.php?pagina=lista" title="Pessoas cadastradas">Pessoas cadastradas</a>
-                </li>
-                <li>
-                    <a href="index.php?pagina=form" title="Nova pessoa">Nova pessoa</a>
-                </li>
-            <?php endif; ?>
-
-            <?php if (taLogado()): ?>
-                <li>
                     <a href="#" title="Opções do Usuário" class="submenu"><?php echo $_SESSION['email'] ?>)</a>
                     <ul>
                         <li>
-                            <a href="index.php?pagina=form&id_usuario=<?php $id_usuario ?>" title="Editar minha conta">Editar Conta</a>
+                            <a href="index.php?pagina=form&id_usuario=<?php echo $_SESSION['id_usuario'] ?>" title="Editar minha conta">Editar Conta</a>
                         </li>
                         <li>
                             <a href="php/logout.php" title="Sair da Minha Sessão">Sair</a>
