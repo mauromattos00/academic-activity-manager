@@ -1,5 +1,8 @@
 body {
-	font-family: arial;
+    font-family: "Fira Sans OT", arial;
+    font-size: 17px;
+    padding: 1%;
+    background-color: #F0F0F0;
 }
 
 label, input[type=submit] {
@@ -9,8 +12,8 @@ label, input[type=submit] {
 }
 
 label.checkbox {
-	font-weight: normal;
-	margin: 0;
+    font-weight: normal;
+    margin: 0;
 }
 
 table {
@@ -23,69 +26,89 @@ p.message {
     color: green;
 }
 
- label {
-        display: block;
-        font-weight: bold;
-        margin-top: 10px;
- }
- 
- #menu {
-	font-weight: bold;
-	font-size: 1.2em;
-	background: #99B2B7;
-	padding: 1%;
- }
- 
-  #menu li a {
-	text-decoration: none;
-	color: white;
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
-  #menu li a:hover {
-	color: silver;
-  }
-  
-  #menu li {
-	display: inline-block;
-	margin-right: 3%;
-  }
-  
-    ul#menu li ul {
-		position: absolute;
-		background: #99B2B7;
-		padding: 1%;
-		display: none;
-	}
-	
-	#menu form {
-		position: absolute;
-		background: #99B2B7;
-		color: white;
-		padding: 1%;
-		display: none;
-	}
-	
-	#menu input {
-		border: 1px solid white;
-	}
-  
-  .error {
-	color: red;
-  }
-  
-  #manterLogado  {
-	font-size: .8em;
-  }
-  
-  #manterLogado input {
-	float: left;
-  }
-  
-  input {
-	border: 1px solid black;
-        border-radius: 5px;
-  }
-  
-  .ui-button {
-	font-size: .8em;
-  }
+#menu {
+    font-weight: normal;
+    font-size: 1.2em;
+    background: #223A4C ;
+    box-shadow: 3px 3px 7px #0B1219;
+    padding: 1%;
+    border-radius: 5px;
+}
+
+#menu li a {
+    text-decoration: none;
+    color: white;
+    vertical-align:middle;
+}
+
+
+#menu li a:hover {
+    color: silver;
+}
+
+#menu img{
+    height: 30px;
+    width: 30px;
+}
+
+#menu li {
+    display: inline-block;
+    margin-right: 3%;
+}
+
+ul#menu li ul {
+    position: absolute;
+    background: #223A4C;
+    padding: 1%;
+    border-radius: 5px;
+    display: none;
+}
+
+#menu form {
+    position: absolute;
+    background: #223A4C ;
+    color: white;
+    padding: 1%;
+    border-radius: 5px;
+    display: none;
+}
+
+#menu input {
+    border: 1px solid white;
+}
+
+.error {
+    color: red;
+}
+
+#manterLogado  {
+    font-size: .8em;
+}
+
+#manterLogado input {
+    float: left;
+}
+
+input {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.ui-button {
+    font-size: .8em;
+}
+
+.divEsquerda{
+    height: 80%;
+    width: 17%;
+    background: #447399;
+    box-shadow: 3px 3px 7px #0B1219;
+    padding: 1%;
+    border-radius: 5px;
+}

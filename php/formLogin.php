@@ -25,5 +25,5 @@ if (isset($_GET['message'])) {
 		<label for="manterLogado">Manter logado</label>
 	</div>
 
-    <input type="submit" value="Login" />
+    <input type="submit" value="Entrar" />
 </form>
