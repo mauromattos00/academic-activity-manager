@@ -9,7 +9,7 @@ $senha = isset($_POST['senha']) && $_POST['senha'] ? trim($_POST['senha']) : nul
 $confirmarSenha = isset($_POST['confirmarSenha']) && $_POST['confirmarSenha'] ? trim($_POST['confirmarSenha']) : null;
 
 if ($senha <> $confirmarSenha) {
-    header('Location: index.php?pagina=form&message=3');
+    header('Location: ../index.php?pagina=form&message=3');
     exit;
 }
 
@@ -21,14 +21,14 @@ if ($nome && $sobrenome && $email && $senha) {
     $result = mysql_query($sql, $database);
 
     if ($result) {
-        header('Location: index.php?message=1');
+        header('Location: ../index.php?message=1');
         exit;
     } else {
-        header('Location: index.php?pagina=form&message=2');
+        header('Location: ../index.php?pagina=form&message=2');
         exit;
     }
 } else {
-    header('Location: index.php?pagina=form&message=1');
+    header('Location: ../index.php?pagina=form&message=1');
     exit;
 }
 ?>
