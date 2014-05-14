@@ -58,7 +58,7 @@ include 'php/function.php';
             </ul>
         <?php endif; ?>
 
-        <div class="recursos">
+        <div class="lateral">
 
         </div>
 
