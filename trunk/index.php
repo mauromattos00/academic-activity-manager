@@ -55,30 +55,35 @@ include 'php/function.php';
                         <input type="submit" value="Entrar" />
                     </form>
                 </li>
-            <?php endif; ?>               
-        </ul>
+            </ul>
+        <?php endif; ?>
 
-        <div class="divEsquerda">
+        <div class="recursos">
 
         </div>
 
-        <?php
-        if (isset($_GET['message'])) {
-            switch ($_GET['message']) {
-                case 1:
-                    echo '<p>Concluído!</p>';
-                    break;
-                case 2:
-                    echo '<p>Ocorreu um erro ao conectar com o banco de dados. Tente novamente.</p>';
-                    break;
+        <div class="conteudoPrincipal">
+
+            <?php
+            if (isset($_GET['message'])) {
+                switch ($_GET['message']) {
+                    case 1:
+                        echo "Concluído!";
+                        break;
+                    case 2:
+                        echo '<p>Ocorreu um erro ao conectar com o banco de dados. Tente novamente.</p>';
+                        break;
+                }
             }
-        }
-        ?>
-        <?php
-        if (isset($_GET['pagina'])) {
-            include 'php/' . $_GET['pagina'] . '.php';
-        }
-        ?>
+            ?>
+            <?php
+            if (isset($_GET['pagina'])) {
+                include 'php/' . $_GET['pagina'] . '.php';
+            }
+            ?>
+
+        </div>
+
 
     </body>
 

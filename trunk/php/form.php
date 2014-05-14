@@ -33,7 +33,7 @@ if (isset($_GET['id_usuario']) && ($id_usuario = $_GET['id_usuario'])) {
 <?php if (isset($id_usuario)): ?>
     <h1>Editar Dados</h1>
 <?php else: ?>
-    <h1>Novo Usuário</h1>
+    <h1>Criar uma conta</h1>
 <?php endif; ?>
 
         <form action="php/process.php<?php echo isset($id_usuario) ? '?id_usuario=' . $id_usuario : '' ?>" method="POST">
@@ -52,7 +52,7 @@ if (isset($_GET['id_usuario']) && ($id_usuario = $_GET['id_usuario'])) {
             <label for="confirmarSenha">Confirmar Senha</label>
             <input type="password" maxlength="15" id="confirmarSenha" name="confirmarSenha" value="<?php echo isset($senha) ? $senha : '' ?>"/>
 
-            <input type="submit" value="Salvar" />
+            <input type="submit" id="submit" value="Salvar" /><br>
             
             <a href="index.php" title="Cancelar">Cancelar</a>
         </form>

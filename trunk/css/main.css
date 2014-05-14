@@ -35,15 +35,14 @@ label {
 #menu {
     font-weight: normal;
     font-size: 1.2em;
-    background: #223A4C ;
-    box-shadow: 3px 3px 7px #0B1219;
+    background: #4C67A1;
+    box-shadow: 1px 1px 2px #5D5D5D;
     padding: 1%;
-    border-radius: 5px;
 }
 
 #menu li a {
     text-decoration: none;
-    color: white;
+    color: #E8E8E8;
     vertical-align:middle;
 }
 
@@ -64,24 +63,25 @@ label {
 
 ul#menu li ul {
     position: absolute;
-    background: #223A4C;
+    background: #4C67A1;
     padding: 1%;
-    border-radius: 5px;
     display: none;
 }
 
 #menu form {
     position: absolute;
-    background: #223A4C ;
+    background: #4C67A1;
+    box-shadow: 1px 1px 2px #0B1219;
     color: white;
     padding: 1%;
-    border-radius: 5px;
     display: none;
 }
 
 #menu input {
     border: 1px solid white;
 }
+
+
 
 .error {
     color: red;
@@ -104,11 +104,22 @@ input {
     font-size: .8em;
 }
 
-.divEsquerda{
+.recursos{
+    float: left;
     height: 80%;
-    width: 17%;
-    background: #447399;
-    box-shadow: 3px 3px 7px #0B1219;
+    width: 15%;
+    background: #ADBAD4;
+    box-shadow: 1px 1px 2px #5D5D5D;
     padding: 1%;
-    border-radius: 5px;
+    border-radius: 2px;
+}
+
+.conteudoPrincipal{
+    float: right;
+    height: 80%;
+    width: 79.5%;
+    background: #EFF1F6;
+    box-shadow: 1px 1px 2px #5D5D5D;
+    padding: 1%;
+    border-radius: 2px;
 }
