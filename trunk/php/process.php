@@ -15,7 +15,7 @@ if ($senha <> $confirmarSenha) {
 
 if ($nome && $sobrenome && $email && $senha) {
     $sql = (isset($_GET['id_usuario']) && ($id_usuario = $_GET['id_usuario']))
-            ? "UPDATE usuario SET nome='$nome', sobrenome='$sobrenome', email='$email' WHERE id_usuario = $id_usuario"
+            ? "UPDATE usuario SET nome='$nome', sobrenome='$sobrenome', email='$email',senha = md5($senha) WHERE id_usuario = $id_usuario"
             : "INSERT INTO usuario (nome, sobrenome, email, senha) VALUES ('$nome', '$sobrenome', '$email', '$senha')";
     
     $result = mysql_query($sql, $database);
