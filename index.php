@@ -24,7 +24,52 @@ include 'php/function.php';
 
             <?php if (taLogado()): ?>
                 <li>
-                    <a href="#" title="Opções do Usuário" class="submenu"> <span class="icon-cog"></span> <?php echo $_SESSION['nome'] ?></a>
+                    <a href="#" class="submenu">Meu Horário</a>
+
+                </li>
+                <li>
+                    <a href="#" class="submenu"><span class="icon-calendar-empty"></span>Meu Calendário</a>
+                    <ul>
+                        <li>
+                            <a href="#">Semanal</a>
+                        </li>
+                        <li>
+                            <a href="#">Mensal</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="submenu">Minhas disciplinas</a>
+                    <ul>
+                        <li>
+                            <a href="#">Design</a>
+                        </li>
+                        <li>
+                            <a href="#">LTPW</a>
+                        </li>
+                        <li>
+                            <a href="#">Banco de dados</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Meus Trabalhos</a>
+                </li>
+
+                <li>
+                    <a href="#" class="submenu"><span class="icon-user"></span> <?php echo $_SESSION['nome'] ?></a>
+                    <ul>
+                        <li>
+                            <a href="#">Perfil</a>
+                        </li>
+                        <li>
+                            <a href="#">Amigos</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#" title="Opções do Usuário" class="submenu"><span class="icon-cog"></span> Opções</a>
                     <ul>
                         <li>
                             <a href="index.php?pagina=form&id_usuario=<?php echo $_SESSION['id_usuario'] ?>" title="Editar minha conta">Editar Conta</a>
@@ -33,7 +78,7 @@ include 'php/function.php';
                             <a href="php/logout.php" title="Sair da Minha Sessão">Sair</a>
                         </li>
                     </ul>
-                </li>                
+                </li>
             <?php else: ?>
                 <li>
                     <a href="index.php?pagina=form">Cadastre-se</a>
@@ -52,15 +97,11 @@ include 'php/function.php';
                             <label for="manterLogado">Manter logado</label>
                         </div>
 
-                        <input type="submit" value="Entrar" />
+                        <input type="submit" value="Entrar" >
                     </form>
                 </li>
-            </ul>
-        <?php endif; ?>
-
-        <div class="lateral">
-
-        </div>
+            <?php endif; ?>
+        </ul>
 
         <div class="conteudoPrincipal">
 

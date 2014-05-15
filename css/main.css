@@ -42,8 +42,7 @@ label {
 
 #menu li a {
     text-decoration: none;
-    color: #E8E8E8;
-    vertical-align:middle;
+    color: white;
 }
 
 
@@ -104,7 +103,7 @@ input {
     font-size: .8em;
 }
 
-.lateral{
+#lateral{
     float: left;
     height: 80%;
     width: 15%;
@@ -115,11 +114,25 @@ input {
 }
 
 .conteudoPrincipal{
-    float: right;
+    font-weight: normal;
     height: 80%;
-    width: 79.5%;
+    width: 98%;
     background: #EFF1F6;
     box-shadow: 1px 1px 2px #5D5D5D;
     padding: 1%;
     border-radius: 2px;
+}
+
+#lateral li{
+    list-style-type: none;
+}
+
+#lateral li a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.2em;
+}
+
+#lateral li a:hover {
+    background-color: #5D9649;
 }
