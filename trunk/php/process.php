@@ -6,8 +6,6 @@ $nome = isset($_POST['nome']) && $_POST['nome'] ? trim($_POST['nome']) : null;
 $sobrenome = isset($_POST['sobrenome']) && $_POST['sobrenome'] ? trim($_POST['sobrenome']) : null;
 $email = isset($_POST['email']) && $_POST['email'] ? trim($_POST['email']) : null;
 $nascimento = isset($_POST['nascimento']) && $_POST['nascimento'] ? trim($_POST['nascimento']) : null;
-var_dump($nome);
-/*
 $sexo = isset($_POST['sexo']) && $_POST['sexo'] ? trim($_POST['sexo']) : null;
 $estado = isset($_POST['estado']) && $_POST['estado'] ? trim($_POST['estado']) : null;
 $cidade = isset($_POST['cidade']) && $_POST['cidade'] ? trim($_POST['cidade']) : null;
@@ -31,4 +29,4 @@ if ($nome && $sobrenome && $email && $nascimento && $sexo && $estado && $cidade 
     header('Location: ../index.php?pagina=form&message=1');
     exit;
 }
-?>*/
+?>
