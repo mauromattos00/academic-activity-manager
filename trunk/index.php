@@ -3,8 +3,6 @@ session_start();
 include 'php/connection.php';
 include 'php/function.php';
 ?>
-
-
 <html lang="pt-br">
     <head>
         <title>PROJETO</title>
@@ -14,9 +12,7 @@ include 'php/function.php';
         <script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
     </head>
-
     <body>
-
         <ul id="menu">
             <li>
                 <a href="index.php" class="icon-home"></a>
@@ -25,7 +21,6 @@ include 'php/function.php';
             <?php if (taLogado()): ?>
                 <li>
                     <a href="#" class="submenu">Meu Horário</a>
-
                 </li>
                 <li>
                     <a href="#" class="submenu"><span class="icon-calendar-empty"></span>Meu Calendário</a>
@@ -39,35 +34,22 @@ include 'php/function.php';
                     </ul>
                 </li>
                 <li>
-                    <a href="#" class="submenu">Minhas disciplinas</a>
-                    <ul>
-                        <li>
-                            <a href="#">Design</a>
-                        </li>
-                        <li>
-                            <a href="#">LTPW</a>
-                        </li>
-                        <li>
-                            <a href="#">Banco de dados</a>
-                        </li>
-                    </ul>
+                    <a href="index.php?pagina=disciplinas">Minhas disciplinas</a>
                 </li>
                 <li>
                     <a href="#">Meus Trabalhos</a>
                 </li>
-
                 <li>
                     <a href="#" class="submenu"><span class="icon-user"></span> <?php echo $_SESSION['nome'] ?></a>
                     <ul>
                         <li>
-                            <a href="#">Perfil</a>
+                            <a href="index.php?pagina=perfil&id_usuario=<?php echo $_SESSION['id_usuario'] ?>" title="Mostrar meu perfil">Perfil</a>
                         </li>
                         <li>
                             <a href="#">Amigos</a>
                         </li>
                     </ul>
                 </li>
-
                 <li>
                     <a href="#" title="Opções do Usuário" class="submenu"><span class="icon-cog"></span> Opções</a>
                     <ul>
@@ -102,9 +84,7 @@ include 'php/function.php';
                 </li>
             <?php endif; ?>
         </ul>
-
         <div class="conteudoPrincipal">
-
             <?php
             if (isset($_GET['message'])) {
                 switch ($_GET['message']) {
@@ -122,10 +102,6 @@ include 'php/function.php';
                 include 'php/' . $_GET['pagina'] . '.php';
             }
             ?>
-
         </div>
-
-
     </body>
-
 </html>
