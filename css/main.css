@@ -136,3 +136,10 @@ input {
 #lateral li a:hover {
     background-color: #5D9649;
 }
+
+#imgPerfil{
+    display:none;
+}
+#imgPerfil2, #imgPerfil2 ul{
+    list-style-type: none;
+}
