@@ -13,6 +13,19 @@ include 'php/function.php';
         <script type="text/javascript" src="js/main.js"></script>
     </head>
     <body>
+
+        <?php
+        if (isset($_GET['id_usuario']) && ($id_usuario = $_GET['id_usuario'])) {
+            $sql = "SELECT * FROM usuario WHERE id_usuario = $id_usuario";
+            $result = mysql_query($sql, $database);
+
+            if (mysql_num_rows($result) == 1) {
+                $row = mysql_fetch_assoc($result);
+                $id_usuario = $row['id_usuario'];
+            }
+        }
+        ?>
+
         <ul id="menu">
             <li>
                 <a href="index.php" class="icon-home"></a>
@@ -34,7 +47,7 @@ include 'php/function.php';
                     </ul>
                 </li>
                 <li>
-                    <a href="index.php?pagina=disciplinas">Minhas disciplinas</a>
+                    <a href="index.php?pagina=disciplinas<?php echo isset($id_usuario) ? '?id_usuario=' . $id_usuario : '' ?>">Minhas disciplinas</a>
                 </li>
                 <li>
                     <a href="#">Meus Trabalhos</a>
@@ -43,7 +56,7 @@ include 'php/function.php';
                     <a href="#" class="submenu"><span class="icon-user"></span> <?php echo $_SESSION['nome'] ?></a>
                     <ul>
                         <li>
-                            <a href="index.php?pagina=perfil&id_usuario=<?php echo $_SESSION['id_usuario'] ?>" title="Mostrar meu perfil">Perfil</a>
+                            <a href="index.php?pagina=perfil" title="Mostrar meu perfil">Perfil</a>
                         </li>
                         <li>
                             <a href="#">Amigos</a>

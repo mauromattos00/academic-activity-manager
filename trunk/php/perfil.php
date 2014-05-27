@@ -1,5 +1,5 @@
 <?php
-if (isset($_GET['id_usuario']) && ($id_usuario = $_GET['id_usuario'])) {
+if (isset($_SESSION['id_usuario']) && ($id_usuario = $_SESSION['id_usuario'])) {
     $sql = "SELECT * FROM usuario WHERE id_usuario = $id_usuario";
     $result = mysql_query($sql, $database);
 
