@@ -20,14 +20,27 @@ if (isset($_GET['id_usuario']) && ($id_usuario = $_GET['id_usuario'])) {
 
 <html>
     <h1>Meu perfil</h1>
-    
-    <img src="img/perfil.jpg" height="200" width="150">
+
+    <img src="img/perfil.jpg" height="200" width="150"> <br/>
+    <ul id="imgPerfil2">
+        <li>
+            <a href="#" class="submenu"><p>Adicionar Imagem de Perfil</p></a>
+            <ul id="imgPerfil">
+                <li>
+                    <form action="php/imgProcess.php"<?php echo isset($id_usuario) ? '?id_usuario=' . $id_usuario : '' ?>" method="POST">
+                        <input type="file" id="userImage">
+                        <input type="Submit" id="submit" value="Enviar Imagem">
+                    </form>
+                </li>
+            </ul>
+        </li>
+    </ul>
 
     <p>
         <?php echo $nome . " " . $sobrenome ?>
     </p>    
     <p>
-       Moro em <?php echo $cidade ?>
+        Moro em <?php echo $cidade ?>
     </p>    
     <p>
         <?php echo $estado ?>
@@ -36,12 +49,12 @@ if (isset($_GET['id_usuario']) && ($id_usuario = $_GET['id_usuario'])) {
         Sexo <?php echo $sexo ?>
     </p>
     <p>
-        Estudou na instituição <?php echo $ensinoMedio ?>
+        Estudou na instituição <a href="#"><b><?php echo $ensinoMedio ?></b></a>
     </p>
     <p>
-        Estudou na instituição <?php echo $ensinoSuperior ?>
+        Estudou na instituição <a href="#"><b><?php echo $ensinoSuperior ?></b></a>
     </p>
-    
+
     <input type="button" id="add" value="Adicionar Amigo" />
 </html>
 
