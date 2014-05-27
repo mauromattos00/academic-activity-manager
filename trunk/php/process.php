@@ -17,7 +17,7 @@ if ($nome && $sobrenome && $email && $senha && $nascimento && $sexo && $estado &
     
     $sql = (isset($_GET['id_usuario']) && ($id_usuario = $_GET['id_usuario']))
             ? "UPDATE usuario SET nome='$nome',sobrenome='$sobrenome',email='$email',nascimento='$nascimento',senha='$senha',sexo='$sexo',cidade='$cidade',estado='$estado',ensinoMedio='$ensinoMedio',ensinoSuperior='$ensinoSuperior' WHERE id_usuario = $id_usuario" 
-            : "INSERT INTO usuario (nome,sobrenome,email,senha,nascimento,sexo,cidade,estado,ensinoMedio,ensinoSuperior) VALUES ('$nome','$sobrenome','$email','$senha',$nascimento,'$sexo','$cidade','$estado','$ensinoMedio','$ensinoSuperior')";
+            : "INSERT INTO usuario (nome,sobrenome,email,senha,nascimento,sexo,cidade,estado,ensinoMedio,ensinoSuperior) VALUES ('$nome','$sobrenome','$email','$senha','$nascimento','$sexo','$cidade','$estado','$ensinoMedio','$ensinoSuperior')";
 
     $result = mysql_query($sql, $database);
     if ($result) {
