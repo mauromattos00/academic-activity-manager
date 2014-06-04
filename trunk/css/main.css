@@ -1,7 +1,6 @@
 body {
     font-family: "Fira Sans OT", arial;
-    font-size: 17px;
-    padding: 1%;
+    font-size: 16px;
     background-color: #F0F0F0;
 }
 
@@ -32,12 +31,22 @@ label {
     margin-top: 10px;
 }
 
-#menu {
-    font-weight: normal;
-    font-size: 1.2em;
+#barraTopo{
+    width: 99%;
+    height: 50px;
     background: #4C67A1;
     box-shadow: 1px 1px 2px #5D5D5D;
-    padding: 1%;
+    padding: 0.2%;
+    margin: 0 auto;
+}
+
+#conteudoMenu{
+    width: 982px;
+}
+
+#menu {
+    font-weight: normal;
+    font-size: 1em;
 }
 
 #menu li a {
@@ -103,38 +112,15 @@ input {
     font-size: .8em;
 }
 
-#lateral{
-    float: left;
-    height: 80%;
-    width: 15%;
-    background: #ADBAD4;
-    box-shadow: 1px 1px 2px #5D5D5D;
-    padding: 1%;
-    border-radius: 2px;
-}
-
 .conteudoPrincipal{
     font-weight: normal;
     height: 100%;
     width: 98%;
     background: #EFF1F6;
     box-shadow: 1px 1px 2px #5D5D5D;
-    padding: 1%;
+    padding: 1% 15%;
     border-radius: 2px;
-}
-
-#lateral li{
-    list-style-type: none;
-}
-
-#lateral li a{
-    text-decoration: none;
-    color: black;
-    font-size: 1.2em;
-}
-
-#lateral li a:hover {
-    background-color: #5D9649;
+    position: static;
 }
 
 #imgPerfil{
@@ -142,4 +128,49 @@ input {
 }
 #imgPerfil2, #imgPerfil2 ul{
     list-style-type: none;
+}
+
+#dados{
+    width: 500px;
+    height: auto;
+    margin:0 auto;
+    text-align: left;
+}
+
+#dados a{
+    text-decoration: none;
+    color: #3B5998;
+}
+
+#formEsquerda input{
+    width: 300px;
+    height: 25px;
+}
+
+#formDireita{
+    float: left;
+    position: relative;
+    margin-right: 10px;
+}
+
+#formEsquerda{
+    float: left;
+    position: relative;
+    margin-right: 15px;
+}
+
+#formDireita input{
+    width: 300px;
+    height: 25px;
+}
+
+#botaoSubmit{
+    position: absolute;
+}
+
+#formulario{
+    width: 650px;
+}
+.botoes{
+    clear: both;
 }
