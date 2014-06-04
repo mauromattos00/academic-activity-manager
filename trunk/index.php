@@ -15,7 +15,7 @@ include 'php/function.php';
     <body>
 
         <?php
-        if (isset($_GET['id_usuario']) && ($id_usuario = $_GET['id_usuario'])) {
+        if (isset($_SESSION['id_usuario']) && ($id_usuario = $_SESSION['id_usuario'])) {
             $sql = "SELECT * FROM usuario WHERE id_usuario = $id_usuario";
             $result = mysql_query($sql, $database);
 
@@ -25,78 +25,72 @@ include 'php/function.php';
             }
         }
         ?>
+        <section id="barraTopo">
 
-        <ul id="menu">
-            <li>
-                <a href="index.php" class="icon-home"></a>
-            </li>
+            <ul id="menu">
+                <li>
+                    <a href="index.php" class="icon-home"></a>
+                </li>
 
-            <?php if (taLogado()): ?>
-                <li>
-                    <a href="#" class="submenu">Meu Horário</a>
-                </li>
-                <li>
-                    <a href="#" class="submenu"><span class="icon-calendar-empty"></span>Meu Calendário</a>
-                    <ul>
-                        <li>
-                            <a href="#">Semanal</a>
-                        </li>
-                        <li>
-                            <a href="#">Mensal</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="index.php?pagina=disciplinas<?php echo isset($id_usuario) ? '?id_usuario=' . $id_usuario : '' ?>">Minhas disciplinas</a>
-                </li>
-                <li>
-                    <a href="#">Meus Trabalhos</a>
-                </li>
-                <li>
-                    <a href="#" class="submenu"><span class="icon-user"></span> <?php echo $_SESSION['nome'] ?></a>
-                    <ul>
-                        <li>
-                            <a href="index.php?pagina=perfil" title="Mostrar meu perfil">Perfil</a>
-                        </li>
-                        <li>
-                            <a href="#">Amigos</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#" title="Opções do Usuário" class="submenu"><span class="icon-cog"></span> Opções</a>
-                    <ul>
-                        <li>
-                            <a href="index.php?pagina=form&id_usuario=<?php echo $_SESSION['id_usuario'] ?>" title="Editar minha conta">Editar Conta</a>
-                        </li>
-                        <li>
-                            <a href="php/logout.php" title="Sair da Minha Sessão">Sair</a>
-                        </li>
-                    </ul>
-                </li>
-            <?php else: ?>
-                <li>
-                    <a href="index.php?pagina=form">Cadastre-se</a>
-                </li>
-                <li>
-                    <a href="#" title="Logar no site" id="formLogin">Login</a>
-                    <form action="php/login.php" method="post">
-                        <label for="email">E-mail</label>
-                        <input type="text" id="email" name="email" />
+                <?php if (taLogado()): ?>
+                    <li>
+                        <a href="#" class="submenu">Meu Horário</a>
+                    </li>
+                    <li>
+                        <a href="#" class="submenu"><span class="icon-calendar-empty"></span>Meu Calendário</a>
+                        <ul>
+                            <li>
+                                <a href="#">Semanal</a>
+                            </li>
+                            <li>
+                                <a href="#">Mensal</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="index.php?pagina=disciplinas">Minhas disciplinas</a>
+                    </li>
 
-                        <label for="senha">Senha</label>
-                        <input type="password" maxlength="15" id="senha" name="senha" />
+                    </li>
+                    <li>
+                        <a href="#">Meus Trabalhos</a>
+                    </li>
+                    <li>
+                        <a href="#" class="submenu"><span class="icon-user"></span> <?php echo $_SESSION['nome'] ?></a>
+                        <ul>
+                            <li>
+                                <a href="index.php?pagina=perfil" title="Mostrar meu perfil">Perfil</a>
+                            </li>
+                            <li>
+                                <a href="php/logout.php" title="Sair da Minha Sessão">Sair</a>
+                            </li>
+                        </ul>
+                    </li>
+                <?php else: ?>
+                    <li>
+                        <a href="index.php?pagina=form">Cadastre-se</a>
+                    </li>
+                    <li>
+                        <a href="#" title="Logar no site" id="formLogin">Login</a>
+                        <form action="php/login.php" method="post">
+                            <label for="email">E-mail</label>
+                            <input type="text" id="email" name="email" />
 
-                        <div id="manterLogado">
-                            <input type="checkbox" name="manterLogado" id="manterLogado" value="1" />
-                            <label for="manterLogado">Manter logado</label>
-                        </div>
+                            <label for="senha">Senha</label>
+                            <input type="password" maxlength="15" id="senha" name="senha" />
 
-                        <input type="submit" value="Entrar" >
-                    </form>
-                </li>
-            <?php endif; ?>
-        </ul>
+                            <div id="manterLogado">
+                                <input type="checkbox" name="manterLogado" id="manterLogado" value="1" />
+                                <label for="manterLogado">Manter logado</label>
+                            </div>
+
+                            <input type="submit" value="Entrar" >
+                        </form>
+                    </li>
+                <?php endif; ?>
+            </ul>
+
+        </section>
         <div class="conteudoPrincipal">
             <?php
             if (isset($_GET['message'])) {
@@ -116,5 +110,7 @@ include 'php/function.php';
             }
             ?>
         </div>
+
+        <ul id="menu"><li>Mauro Mattos</li></ul>
     </body>
 </html>
