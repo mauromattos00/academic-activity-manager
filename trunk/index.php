@@ -56,15 +56,11 @@ include 'php/function.php';
                         <a href="#">Meus Trabalhos</a>
                     </li>
                     <li>
-                        <a href="#" class="submenu"><span class="icon-user"></span> <?php echo $_SESSION['nome'] ?></a>
-                        <ul>
-                            <li>
-                                <a href="index.php?pagina=perfil" title="Mostrar meu perfil">Perfil</a>
-                            </li>
-                            <li>
-                                <a href="php/logout.php" title="Sair da Minha Sessão">Sair</a>
-                            </li>
-                        </ul>
+                        <a href="index.php?pagina=perfil"><span class="icon-user"></span> <?php echo $_SESSION['nome'] ?></a>
+                    </li>
+                    <li>
+                        <a href="php/logout.php" title="Sair da Minha Sessão">Sair</a>
+                    </li>
                     </li>
                 <?php else: ?>
                     <li>
@@ -110,7 +106,5 @@ include 'php/function.php';
             }
             ?>
         </div>
-
-        <ul id="menu"><li>Mauro Mattos</li></ul>
     </body>
 </html>
