@@ -3,10 +3,10 @@
 <?php
 if (isset($_GET['message'])) {
     switch ($_GET['message']) {
-        case 1:
+        case 5:
             echo '<p class="error">Todos os campos devem ser preenchidos!</p>';
             break;
-		case 2:
+		case 6:
             echo '<p class="error">E-mail e/ou senha inválidos!</p>';
             break;
     }
