@@ -34,7 +34,6 @@ if (isset($_SESSION['id_usuario']) && ($id_usuario = $_SESSION['id_usuario'])) {
                 </ul>
             </li>
         </ul>
-
         <p>
             <?php echo $nome . " " . $sobrenome ?>
         </p>    
@@ -56,8 +55,7 @@ if (isset($_SESSION['id_usuario']) && ($id_usuario = $_SESSION['id_usuario'])) {
         
         <a href="index.php?pagina=form" title="Editar minha conta"><b>Editar Conta</b></a>
     </section>
-
-
+    
 </html>
 
 
