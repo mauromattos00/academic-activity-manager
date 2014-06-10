@@ -23,11 +23,11 @@ if ($email && $senha) {
 		header('Location: ../index.php');
 		exit;
 	} else {
-		header('Location: ../index.php?pagina=formLogin&message=2');
+		header('Location: ../index.php?pagina=formLogin&message=6');
 		exit;
 	}
 } else {
-    header('Location: ../index.php?pagina=formLogin&message=1');
+    header('Location: ../index.php?pagina=formLogin&message=5');
     exit;
 }
 ?>

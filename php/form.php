@@ -1,17 +1,11 @@
 <?php
 if (isset($_GET['message'])) {
     switch ($_GET['message']) {
-        case 5:
+        case 3:
             echo '<p>Todos os campos devem ser preenchidos!</p>';
             break;
-        case 2:
-            echo '<p>Ocorreu um problema ao salvar os dados. Por favor, tente novamente.</p>';
-            break;
-        case 3:
-            echo '<p>Os campos SENHA e CONFIRMAR SENHA devem ser iguais, tente novamente.</p>';
-            break;
         case 4:
-            echo '<p>Concluído!</p>';
+            echo '<p>Ocorreu um problema ao salvar os dados. Por favor, tente novamente.</p>';
             break;
     }
 }
@@ -59,12 +53,14 @@ if (isset($_SESSION['id_usuario']) && ($id_usuario = $_SESSION['id_usuario'])) {
 
             <label for="nascimento">Data de nascimento (dd/mm/aaaa)</label>
             <input type="text" name="nascimento" id="nascimento" value="<?php echo isset($nascimento) ? $nascimento : '' ?>" />
-
     </section>
+
     <section id="formDireita">
         <label for="sexo">Sexo</label>
-        <option>
-        <input type="text" name="sexo" id="sexo" value="<?php echo isset($sexo) ? $sexo : '' ?>" />
+        <select>
+        <option name="sexo" id="sexo" value="Masculino">Masculino</option>
+        <option name="sexo" id="sexo" value="Feminino">Feminino</option>
+        </select>
 
         <label for="estado">Estado</label>
         <input type="text" name="estado" id="estado" value="<?php echo isset($estado) ? $estado : '' ?>"/>

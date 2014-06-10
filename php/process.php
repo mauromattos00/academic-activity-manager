@@ -24,11 +24,11 @@ if ($nome && $sobrenome && $email && $senha && $nascimento && $sexo && $estado &
         header('Location: ../index.php?message=1');
         exit;
     } else {
-        header('Location: ../index.php?pagina=form&message=2');
+        header('Location: ../index.php?pagina=form&message=4');
         exit;
     }
 } else {
-    header('Location: ../index.php?pagina=form&message=5');
+    header('Location: ../index.php?pagina=form&message=3');
     exit;
 }
 ?>
