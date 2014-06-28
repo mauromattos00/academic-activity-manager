@@ -48,7 +48,7 @@ include 'php/function.php';
                         </ul>
                     </li>
                     <li>
-                        <a href="index.php?pagina=disciplinas">Minhas disciplinas</a>
+                        <a href="index.php?pagina=listadedisciplinas">Minhas disciplinas</a>
                     </li>
 
                     </li>
@@ -88,18 +88,7 @@ include 'php/function.php';
 
         </section>
         <div class="conteudoPrincipal">
-            <?php
-            if (isset($_GET['message'])) {
-                switch ($_GET['message']) {
-                    case 1:
-                        echo "Concluído!";
-                        break;
-                    case 2:
-                        echo '<p>Ocorreu um erro ao conectar com o banco de dados. Tente novamente.</p>';
-                        break;
-                }
-            }
-            ?>
+            
             <?php
             if (isset($_GET['pagina'])) {
                 include 'php/' . $_GET['pagina'] . '.php';
