@@ -31,7 +31,14 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mydb`.`disciplina` (
   `id_disciplina` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id_disciplina`))
+  `id_usuario` INT NOT NULL,
+  PRIMARY KEY (`id_disciplina`),
+  INDEX `fk_disciplina_usuario1_idx` (`id_usuario` ASC),
+  CONSTRAINT `fk_disciplina_usuario1`
+    FOREIGN KEY (`id_usuario`)
+    REFERENCES `mydb`.`usuario` (`id_usuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 COMMENT = 'Disciplinas à serem gerenciadas estudadas pelo usuário.';
 
@@ -42,7 +49,14 @@ COMMENT = 'Disciplinas à serem gerenciadas estudadas pelo usuário.';
 CREATE TABLE IF NOT EXISTS `mydb`.`professor` (
   `id_professor` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NULL,
-  PRIMARY KEY (`id_professor`))
+  `id_usuario` INT NOT NULL,
+  PRIMARY KEY (`id_professor`),
+  INDEX `fk_professor_usuario1_idx` (`id_usuario` ASC),
+  CONSTRAINT `fk_professor_usuario1`
+    FOREIGN KEY (`id_usuario`)
+    REFERENCES `mydb`.`usuario` (`id_usuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 COMMENT = 'Professores(as) relacionados(as) às disciplinas';
 
@@ -196,50 +210,6 @@ CREATE TABLE IF NOT EXISTS `mydb`.`category_1` (
   `category_id` INT NOT NULL,
   `name` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`category_id`));
-
-
--- -----------------------------------------------------
--- Table `mydb`.`usuario_has_disciplina`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`usuario_has_disciplina` (
-  `id_usuario` INT NOT NULL,
-  `id_disciplina` INT NOT NULL,
-  PRIMARY KEY (`id_usuario`, `id_disciplina`),
-  INDEX `fk_usuario_has_disciplina_disciplina1_idx` (`id_disciplina` ASC),
-  INDEX `fk_usuario_has_disciplina_usuario1_idx` (`id_usuario` ASC),
-  CONSTRAINT `fk_usuario_has_disciplina_usuario1`
-    FOREIGN KEY (`id_usuario`)
-    REFERENCES `mydb`.`usuario` (`id_usuario`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_usuario_has_disciplina_disciplina1`
-    FOREIGN KEY (`id_disciplina`)
-    REFERENCES `mydb`.`disciplina` (`id_disciplina`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `mydb`.`usuario_has_professor`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`usuario_has_professor` (
-  `id_usuario` INT NOT NULL,
-  `id_professor` INT NOT NULL,
-  PRIMARY KEY (`id_usuario`, `id_professor`),
-  INDEX `fk_usuario_has_professor_professor1_idx` (`id_professor` ASC),
-  INDEX `fk_usuario_has_professor_usuario1_idx` (`id_usuario` ASC),
-  CONSTRAINT `fk_usuario_has_professor_usuario1`
-    FOREIGN KEY (`id_usuario`)
-    REFERENCES `mydb`.`usuario` (`id_usuario`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_usuario_has_professor_professor1`
-    FOREIGN KEY (`id_professor`)
-    REFERENCES `mydb`.`professor` (`id_professor`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
