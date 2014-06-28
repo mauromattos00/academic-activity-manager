@@ -2,13 +2,10 @@
 if (isset($_GET['message'])) {
     switch ($_GET['message']) {
         case 1:
-            echo "Disciplina Adicionada com Sucesso.";
+            echo "<p class='erro'>Erro ao conectar com o banco de dados.</p>";
             break;
         case 2:
-            echo "Erro ao conectar com o banco de dados.";
-            break;
-        case 3:
-            echo "Dê um nome à nova disciplina!";
+            echo "<p class='erro'>Dê um nome à nova disciplina!</p>";
             break;
     }
 }
