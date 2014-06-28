@@ -21,7 +21,7 @@ if ($nome && $sobrenome && $email && $senha && $nascimento && $sexo && $estado &
 
     $result = mysql_query($sql, $database);
     if ($result) {
-        header('Location: ../index.php?message=1');
+        header('Location: ../index.php?pagina=home&message=1');
         exit;
     } else {
         header('Location: ../index.php?pagina=form&message=4');
