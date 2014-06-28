@@ -18,11 +18,17 @@ label.checkbox {
 table {
     width: 70%;
 }
+
 tr.title {
     background: #efefef;
 }
-p.message {
+
+p.sucesso {
     color: green;
+}
+
+p.erro {
+    color: red;
 }
 
 label {
@@ -88,8 +94,6 @@ ul#menu li ul {
 #menu input {
     border: 1px solid white;
 }
-
-
 
 .error {
     color: red;
