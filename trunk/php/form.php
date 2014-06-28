@@ -2,10 +2,10 @@
 if (isset($_GET['message'])) {
     switch ($_GET['message']) {
         case 3:
-            echo '<p>Todos os campos devem ser preenchidos!</p>';
+            echo '<p class="erro">Todos os campos devem ser preenchidos!</p>';
             break;
         case 4:
-            echo '<p>Ocorreu um problema ao salvar os dados. Por favor, tente novamente.</p>';
+            echo '<p class="erro">Ocorreu um problema ao salvar os dados. Por favor, tente novamente.</p>';
             break;
     }
 }
@@ -57,10 +57,14 @@ if (isset($_SESSION['id_usuario']) && ($id_usuario = $_SESSION['id_usuario'])) {
 
     <section id="formDireita">
         <label for="sexo">Sexo</label>
+         <input type="text" name="sexo" id="sexp" value="<?php echo isset($sexo) ? $sexo : '' ?>" />
+         
+        <!--
+        Não está funcionando
         <select>
         <option name="sexo" id="sexo" value="Masculino">Masculino</option>
         <option name="sexo" id="sexo" value="Feminino">Feminino</option>
-        </select>
+        </select>-->
 
         <label for="estado">Estado</label>
         <input type="text" name="estado" id="estado" value="<?php echo isset($estado) ? $estado : '' ?>"/>
