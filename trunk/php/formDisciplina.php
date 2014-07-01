@@ -7,6 +7,9 @@ if (isset($_GET['message'])) {
         case 2:
             echo "<p class='erro'>Dê um nome à nova disciplina!</p>";
             break;
+        case 3:
+            echo "<p class='erro'>Essa disciplina já se encontra cadastrada.</p>";
+            break;
     }
 }
 ?>
