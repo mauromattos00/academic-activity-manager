@@ -57,14 +57,11 @@ if (isset($_SESSION['id_usuario']) && ($id_usuario = $_SESSION['id_usuario'])) {
 
     <section id="formDireita">
         <label for="sexo">Sexo</label>
-         <input type="text" name="sexo" id="sexp" value="<?php echo isset($sexo) ? $sexo : '' ?>" />
          
-        <!--
-        Não está funcionando
-        <select>
-        <option name="sexo" id="sexo" value="Masculino">Masculino</option>
-        <option name="sexo" id="sexo" value="Feminino">Feminino</option>
-        </select>-->
+        <select name="sexo" id="sexo">
+        <option  value="Masculino">Masculino</option>
+        <option  value="Feminino">Feminino</option>
+        </select>
 
         <label for="estado">Estado</label>
         <input type="text" name="estado" id="estado" value="<?php echo isset($estado) ? $estado : '' ?>"/>
