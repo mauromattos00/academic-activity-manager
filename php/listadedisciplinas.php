@@ -1,5 +1,4 @@
 <?php
-include'connection.php';
 
 if (isset($_GET['message'])) {
     switch ($_GET['message']) {
@@ -12,12 +11,12 @@ if (isset($_GET['message'])) {
 if (isset($_SESSION['id_usuario']) && ($id_usuario = $_SESSION['id_usuario'])) {
     $sql = "SELECT * FROM disciplina WHERE id_usuario = $id_usuario";
     $result = mysql_query($sql);
-
-    while ($row = mysql_fetch_assoc($result)) {
-        echo "<p><a href='index.php?pagina=id_disc=" . $row['id_disciplina'] . "'>" . $row['nome'] . "</a></p>";
-    }
 }
 ?>
+
+<?php while ($row = mysql_fetch_assoc($result)): ?>
+    <p><a href='index.php?pagina=disciplina&id_disc="<?php echo $row['id_disciplina'] ?>"'>"<?php $row['nome'] ?>"</a></p>";
+<?php endwhile; ?>
 
 
 
