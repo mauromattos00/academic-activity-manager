@@ -15,9 +15,9 @@ if (isset($_SESSION['id_usuario']) && ($id_usuario = $_SESSION['id_usuario'])) {
 ?>
 
 <?php while ($row = mysql_fetch_assoc($result)): ?>
-    <p><a href='index.php?pagina=disciplina&id_disc="<?php echo $row['id_disciplina'] ?>"'>"<?php $row['nome'] ?>"</a></p>";
+    <p><a href='index.php?pagina=disciplina&id_disciplina=<?php echo $row['id_disciplina'] ?>'><?php echo $row['nome'] ?></a></p>
 <?php endwhile; ?>
 
 
 
-<a href="index.php?pagina=formDisciplina">Adicionar Disciplina</a>
+<a href="index.php?pagina=formDisciplina"><b>Nova Disciplina</b></a>
