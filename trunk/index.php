@@ -53,7 +53,7 @@ include 'php/function.php';
 
                     </li>
                     <li>
-                        <a href="#">Meus Trabalhos</a>
+                        <a href="index.php?pagina=listadetrabalhos">Meus Trabalhos</a>
                     </li>
                     <li>
                         <a href="index.php?pagina=perfil"><span class="icon-user"></span> <?php echo $_SESSION['nome'] ?></a>
