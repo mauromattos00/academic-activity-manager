@@ -15,7 +15,7 @@ if (isset($_SESSION['id_usuario']) && ($id_usuario = $_SESSION['id_usuario'])) {
 ?>
 
 <?php while ($row = mysql_fetch_assoc($result)): ?>
-    <p><a href='index.php?pagina=trabalho&id_trabalho=<?php echo $row['id_trabalho'] ?>'><?php echo $row['nome'] ?></a></p>
+    <p><a class="linklista" href='index.php?pagina=trabalho&id_trabalho=<?php echo $row['id_trabalho'] ?>'><?php echo $row['nome'] ?></a></p>
 <?php endwhile; ?>
 
 
