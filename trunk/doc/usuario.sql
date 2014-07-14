@@ -84,17 +84,28 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
+-- Table `mydb`.`FaseDoTrabalho`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`FaseDoTrabalho` (
+  `id_fase` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id_fase`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `mydb`.`trabalho`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`trabalho` (
+  `nome` VARCHAR(45) NOT NULL,
   `id_trabalho` INT NOT NULL AUTO_INCREMENT,
   `id_disciplina` INT NOT NULL,
-  `data_entrega` DATE NOT NULL,
   `id_usuario` INT NOT NULL,
-  `fase` TEXT NOT NULL,
+  `id_fase` INT NOT NULL,
   PRIMARY KEY (`id_trabalho`),
   INDEX `fk_trabalho_disciplina1_idx` (`id_disciplina` ASC),
   INDEX `fk_trabalho_usuario1_idx` (`id_usuario` ASC),
+  INDEX `fk_trabalho_FaseDoTrabalho1_idx` (`id_fase` ASC),
   CONSTRAINT `fk_trabalho_disciplina1`
     FOREIGN KEY (`id_disciplina`)
     REFERENCES `mydb`.`disciplina` (`id_disciplina`)
@@ -103,6 +114,11 @@ CREATE TABLE IF NOT EXISTS `mydb`.`trabalho` (
   CONSTRAINT `fk_trabalho_usuario1`
     FOREIGN KEY (`id_usuario`)
     REFERENCES `mydb`.`usuario` (`id_usuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_trabalho_FaseDoTrabalho1`
+    FOREIGN KEY (`id_fase`)
+    REFERENCES `mydb`.`FaseDoTrabalho` (`id_fase`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -113,7 +129,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`tarefa` (
   `id_tarefa` INT NOT NULL AUTO_INCREMENT,
-  `sumario_tarefa` VARCHAR(45) NOT NULL,
+  `nome` VARCHAR(45) NOT NULL,
   `descricao_tarefa` VARCHAR(45) NULL,
   `id_trabalho` INT NOT NULL,
   `status` TEXT NOT NULL,
