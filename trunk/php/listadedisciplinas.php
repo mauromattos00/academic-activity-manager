@@ -1,5 +1,4 @@
 <?php
-
 if (isset($_GET['message'])) {
     switch ($_GET['message']) {
         case 1:
@@ -10,12 +9,12 @@ if (isset($_GET['message'])) {
 
 if (isset($_SESSION['id_usuario']) && ($id_usuario = $_SESSION['id_usuario'])) {
     $sql = "SELECT * FROM disciplina WHERE id_usuario = $id_usuario";
-    $result = mysql_query($sql);
+    $result = mysql_query($sql, $database);
 }
 ?>
 
 <?php while ($row = mysql_fetch_assoc($result)): ?>
-    <p><a href='index.php?pagina=disciplina&id_disciplina=<?php echo $row['id_disciplina'] ?>'><?php echo $row['nome'] ?></a></p>
+    <p><a class="linklista" href='index.php?pagina=disciplina&id_disciplina=<?php echo $row['id_disciplina'] ?>'><?php echo $row['nome'] ?></a></p>
 <?php endwhile; ?>
 
 
