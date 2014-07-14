@@ -178,3 +178,11 @@ input {
 .botoes{
     clear: both;
 }
+
+.linklista{
+    text-decoration: none;
+}
+
+.linklista:hover{
+    margin: 3px;
+}
