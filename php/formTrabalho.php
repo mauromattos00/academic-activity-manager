@@ -36,7 +36,7 @@ if (isset($_SESSION['id_usuario']) && ($id_usuario = $_SESSION['id_usuario'])) {
     ?>
     
     <label>Fase do Trabalho</label>
-    <select name=faseTrabalho" id="faseTrabalho">        
+    <select name="faseTrabalho" id="faseTrabalho">        
         <?php while ($row = mysql_fetch_assoc($result)): ?>
             <option  value="<?php echo $row['id_fase'] ?>"><?php echo $row['nome'] ?></option>
         <?php endwhile; ?>
