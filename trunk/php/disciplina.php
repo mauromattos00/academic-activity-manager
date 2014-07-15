@@ -1,3 +1,10 @@
+<?php
+$sql = "SELECT * FROM trabalho WHERE id_disciplina = '{$_GET['id_disciplina']}'";
+$result = mysql_query($sql, $database);
+
+
+?>
+
 <section>
     <h1>Trabalhos</h1>
     <?php while ($row = mysql_fetch_assoc($result)): ?>
