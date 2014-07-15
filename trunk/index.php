@@ -37,7 +37,7 @@ include 'php/function.php';
                         <a href="#" class="submenu">Meu Horário</a>
                     </li>
                     <li>
-                        <a href="#" class="submenu"><span class="icon-calendar-empty"></span>Meu Calendário</a>
+                        <a href="#" class="submenu"><span class="icon-calendar-empty"></span>Calendário</a>
                         <ul>
                             <li>
                                 <a href="#">Semanal</a>
@@ -48,12 +48,12 @@ include 'php/function.php';
                         </ul>
                     </li>
                     <li>
-                        <a href="index.php?pagina=listadedisciplinas">Minhas disciplinas</a>
+                        <a href="index.php?pagina=listadedisciplinas">Disciplinas</a>
                     </li>
 
                     </li>
                     <li>
-                        <a href="index.php?pagina=listadetrabalhos">Meus Trabalhos</a>
+                        <a href="index.php?pagina=listadetrabalhos">Trabalhos</a>
                     </li>
                     <li>
                         <a href="index.php?pagina=perfil"><span class="icon-user"></span> <?php echo $_SESSION['nome'] ?></a>
