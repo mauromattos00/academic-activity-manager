@@ -17,7 +17,8 @@ if ($nomeTrabalho && $Disciplina && $faseTrabalho) {
         header('Location: ../index.php?pagina=formTrabalho$message=2');
     }
 
-    $sql = "INSERT INTO trabalho (nome, id_usuario, id_fase) VALUES ('$nomeTrabalho', '{$_SESSION['id_usuario']}', '$faseTrabalho')";
+    $sql = "INSERT INTO trabalho (nome, id_usuario, id_disciplina, id_fase) VALUES ('$nomeTrabalho', '{$_SESSION['id_usuario']}', '$Disciplina', '$faseTrabalho')";
+    $result = mysql_query($sql, $database);
     
     header('Location: ../index.php?pagina=listadetrabalhos&message=1');
     
