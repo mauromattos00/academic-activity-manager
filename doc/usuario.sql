@@ -84,9 +84,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`FaseDoTrabalho`
+-- Table `mydb`.`fase`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`FaseDoTrabalho` (
+CREATE TABLE IF NOT EXISTS `mydb`.`fase` (
   `id_fase` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id_fase`))
@@ -118,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`trabalho` (
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_trabalho_FaseDoTrabalho1`
     FOREIGN KEY (`id_fase`)
-    REFERENCES `mydb`.`FaseDoTrabalho` (`id_fase`)
+    REFERENCES `mydb`.`fase` (`id_fase`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -132,12 +132,18 @@ CREATE TABLE IF NOT EXISTS `mydb`.`tarefa` (
   `nome` VARCHAR(45) NOT NULL,
   `descricao_tarefa` VARCHAR(45) NULL,
   `id_trabalho` INT NOT NULL,
-  `status` TEXT NOT NULL,
+  `id_fase` INT NOT NULL,
   PRIMARY KEY (`id_tarefa`),
   INDEX `fk_tarefa_trabalho1_idx` (`id_trabalho` ASC),
+  INDEX `fk_tarefa_FaseDoTrabalho1_idx` (`id_fase` ASC),
   CONSTRAINT `fk_tarefa_trabalho1`
     FOREIGN KEY (`id_trabalho`)
     REFERENCES `mydb`.`trabalho` (`id_trabalho`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tarefa_FaseDoTrabalho1`
+    FOREIGN KEY (`id_fase`)
+    REFERENCES `mydb`.`fase` (`id_fase`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -164,7 +170,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`horario` (
   `hora_inicio` INT NOT NULL,
   `hora_fim` INT NOT NULL,
   `id_disciplina` INT NOT NULL,
-  `id_professor` INT NOT NULL,
+  `id_professor` INT NULL,
   PRIMARY KEY (`id_horario`),
   INDEX `fk_horario_usuario1_idx` (`id_usuario` ASC),
   INDEX `fk_horario_semana1_idx` (`id_DiadaSemana` ASC),
@@ -208,24 +214,6 @@ CREATE TABLE IF NOT EXISTS `mydb`.`instituicao_ensino` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `mydb`.`category`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`category` (
-  `category_id` INT NOT NULL,
-  `name` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`category_id`));
-
-
--- -----------------------------------------------------
--- Table `mydb`.`category_1`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`category_1` (
-  `category_id` INT NOT NULL,
-  `name` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`category_id`));
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
