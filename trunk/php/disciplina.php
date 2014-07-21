@@ -30,7 +30,5 @@ $row2 = mysql_fetch_assoc($result2);
 <?php while ($row = mysql_fetch_assoc($result)): ?>
         <b><p><a class="linklista" href='index.php?pagina=tarefa&id_tarefa=<?php echo $row['id_tarefa'] ?>'><?php echo $row['nome'] ?></a></p></b>
 <?php endwhile; ?>
-        
-    <h3><a href="index.php?pagina=formTarefa">Nova Tarefa</a></h3>
     
 </section>

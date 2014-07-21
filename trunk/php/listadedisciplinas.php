@@ -13,6 +13,8 @@ if (isset($_SESSION['id_usuario']) && ($id_usuario = $_SESSION['id_usuario'])) {
 }
 ?>
 
+<h1>DISCIPLINAS</h1>
+
 <?php while ($row = mysql_fetch_assoc($result)): ?>
     <p><a class="linklista" href='index.php?pagina=disciplina&id_disciplina=<?php echo $row['id_disciplina'] ?>'><?php echo $row['nome'] ?></a></p>
 <?php endwhile; ?>
