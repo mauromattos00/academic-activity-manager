@@ -4,10 +4,10 @@ include'connection.php';
 
 session_start();
 
-$faseTrabalho = isset($_POST['faseTrabalho']) && $_POST['faseTrabalho'] ? trim($_POST['faseTrabalho']) : null;
+$fase = isset($_POST['fase']) && $_POST['fase'] ? trim($_POST['fase']) : null;
 
-if ($faseTrabalho) {
-    $sql = "UPDATE trabalho SET id_fase='$faseTrabalho' WHERE id_trabalho ='{$_GET['id_trabalho']}'";
+if ($fase) {
+    $sql = "UPDATE trabalho SET id_fase='$fase' WHERE id_trabalho ='{$_GET['id_trabalho']}'";
     $result = mysql_query($sql, $database);
 
     if ($result) {
