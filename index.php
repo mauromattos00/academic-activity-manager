@@ -5,7 +5,7 @@ include 'php/function.php';
 ?>
 <html lang="pt-br">
     <head>
-        <title>PROJETO</title>
+        <title>ORGANIZE</title>
         <link rel="stylesheet" type="text/css" href="css/fontello.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
@@ -29,23 +29,15 @@ include 'php/function.php';
 
             <ul id="menu">
                 <li>
-                    <a href="index.php" class="icon-home"></a>
+                    <a href="index.php?pagina=home" class="icon-home"></a>
                 </li>
 
                 <?php if (taLogado()): ?>
                     <li>
-                        <a href="#" class="submenu">Meu Horário</a>
+                        <a href="index.php?pagina=horario" class="submenu">Horário</a>
                     </li>
                     <li>
                         <a href="#" class="submenu"><span class="icon-calendar-empty"></span>Calendário</a>
-                        <ul>
-                            <li>
-                                <a href="#">Semanal</a>
-                            </li>
-                            <li>
-                                <a href="#">Mensal</a>
-                            </li>
-                        </ul>
                     </li>
                     <li>
                         <a href="index.php?pagina=listadedisciplinas">Disciplinas</a>
