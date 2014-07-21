@@ -31,12 +31,12 @@ if (isset($_SESSION['id_usuario']) && ($id_usuario = $_SESSION['id_usuario'])) {
     </select>
     
     <?php
-    $sql= "SELECT * FROM fasedotrabalho";
+    $sql= "SELECT * FROM fase";
     $result = mysql_query($sql, $database);
     ?>
     
     <label>Fase do Trabalho</label>
-    <select name="faseTrabalho" id="faseTrabalho">        
+    <select name="fase" id="fase">        
         <?php while ($row = mysql_fetch_assoc($result)): ?>
             <option  value="<?php echo $row['id_fase'] ?>"><?php echo $row['nome'] ?></option>
         <?php endwhile; ?>

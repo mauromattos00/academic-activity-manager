@@ -13,7 +13,7 @@ if (isset($_GET['message'])) {
     }
 }
 
-$sql = "SELECT * FROM fasedotrabalho";
+$sql = "SELECT * FROM fase";
 $result = mysql_query($sql, $database);
 
 $fases = array();
@@ -25,7 +25,7 @@ if (isset($_SESSION['id_usuario']) && ($id_usuario = $_SESSION['id_usuario'])) {
     $sql = "SELECT t.*, d.nome AS nomeDisciplina, f.nome AS nomeFase 
             FROM trabalho t 
             JOIN disciplina d ON t.id_disciplina = d.id_disciplina 
-            JOIN fasedotrabalho f ON t.id_fase = f.id_fase
+            JOIN fase f ON t.id_fase = f.id_fase
             WHERE t.id_usuario = $id_usuario
             ORDER BY t.id_fase asc";
     $result = mysql_query($sql);
@@ -44,7 +44,7 @@ if (isset($_SESSION['id_usuario']) && ($id_usuario = $_SESSION['id_usuario'])) {
             <td><a class="linklista" href='index.php?pagina=disciplina&id_disciplina=<?php echo $row['id_disciplina'] ?>'><?php echo $row['nomeDisciplina'] ?></a></td>
             <td>
                 <form id="form<?php echo $row['id_trabalho'] ?>" action="php/mudarFase.php?id_trabalho=<?php echo $row['id_trabalho'] ?>" method="post">
-                    <select name="faseTrabalho" id="faseTrabalho" onChange="$('#form<?php echo $row['id_trabalho'] ?>').submit()">
+                    <select name="fase" id="fase" onChange="$('#form<?php echo $row['id_trabalho'] ?>').submit()">
 
                         <?php foreach ($fases as $id_fase => $nome): ?>
                             <?php if ($id_fase == $row['id_fase']): ?>
