@@ -22,8 +22,8 @@ if ($nome && $descricao_tarefa && $id_trabalho && $fase) {
 
     $result = mysql_query($sql, $database);
 //COMO REDIRECIONAR PARA A PÁGINA DE UM TRABALHO ESPECÍFICO?
-    header("Location: ../index.php?pagina=trabalho?id_trabalho=$id_trabalho&message=1");
+    header("Location: ../index.php?pagina=trabalho&id_trabalho=$id_trabalho&message=1");
 } else {
-    header("Location: ../index.php?pagina=formTarefa?id_trabalho=$id_trabalho&message=2");
+    header("Location: ../index.php?pagina=formTarefa&id_trabalho=$id_trabalho&message=2");
     exit;
 }
