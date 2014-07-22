@@ -8,9 +8,11 @@ if (isset($_GET['message'])) {
 }
 
 if (isset($_SESSION['id_usuario']) && ($id_usuario = $_SESSION['id_usuario'])) {
-    $sql3 = "SELECT *
+    $sql3 = "SELECT *, nome AS nomeTrabalho
             FROM trabalho
             WHERE id_usuario = $id_usuario";
+    $result3 = mysql_query($sql3);
+    $row3 = mysql_fetch_assoc($result3);
 }
 
 if (isset($_GET['id_trabalho'])) {
@@ -18,7 +20,6 @@ if (isset($_GET['id_trabalho'])) {
             FROM tarefa
             WHERE id_trabalho = '{$_GET['id_trabalho']}'
             ORDER BY id_fase";
-
     $result = mysql_query($sql);
 }
 
@@ -31,7 +32,7 @@ while ($row = mysql_fetch_assoc($result2)) {
 }
 ?>
 
-<h1>TAREFAS</h1>
+<h1>TAREFAS - <?php echo $row3['nome'] ?></h1>
 <a href="index.php?pagina=formTarefa&id_trabalho=<?php echo $_GET['id_trabalho'] ?>">Nova Tarefa</a>
 
 <table>
