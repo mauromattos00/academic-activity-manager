@@ -12,7 +12,9 @@ if (isset($_GET['message'])) {
 }
 
 if (isset($_SESSION['id_usuario']) && ($id_usuario = $_SESSION['id_usuario'])) {
-    $sql = "SELECT * FROM disciplina WHERE id_usuario = $id_usuario";
+    $sql = "SELECT * 
+            FROM disciplina 
+            WHERE id_usuario = $id_usuario";
     $result = mysql_query($sql, $database);
 }
 
