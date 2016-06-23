@@ -3,6 +3,7 @@ $sql = "SELECT *
         FROM trabalho t
         WHERE id_disciplina = '{$_GET['id_disciplina']}'";
 $result = mysql_query($sql, $database);
+echo $result;
 
 $sqlNomeDisciplina = "SELECT *
                       FROM disciplina

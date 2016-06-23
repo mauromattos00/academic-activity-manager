@@ -5,6 +5,7 @@ include 'php/function.php';
 ?>
 <html lang="pt-br">
     <head>
+        <meta charset="UTF-8">
         <title>ORGANIZE</title>
         <link rel="stylesheet" type="text/css" href="css/fontello.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -18,20 +19,20 @@ include 'php/function.php';
         if (isset($_SESSION['id_usuario']) && ($id_usuario = $_SESSION['id_usuario'])) {
             $sql = "SELECT * FROM usuario WHERE id_usuario = $id_usuario";
             $result = mysql_query($sql, $database);
+            // Se houver um ID usuario via session, consultar todos os dados referente àquele ID
 
             if (mysql_num_rows($result) == 1) {
                 $row = mysql_fetch_assoc($result);
                 $id_usuario = $row['id_usuario'];
+                //Se o numero de linhas encontradas no banco de dados for igual 1, recolher os dados da linha e transformá-los e um vetor
             }
         }
         ?>
         <section id="barraTopo">
-
             <ul id="menu">
                 <li>
                     <a href="index.php?pagina=home" class="icon-home"></a>
                 </li>
-
                 <?php if (taLogado()): ?>
                     <li>
                         <a href="index.php?pagina=horario" class="submenu">Horário</a>
@@ -42,8 +43,6 @@ include 'php/function.php';
                     <li>
                         <a href="index.php?pagina=listadedisciplinas">Disciplinas</a>
                     </li>
-
-                    </li>
                     <li>
                         <a href="index.php?pagina=listadetrabalhos">Trabalhos</a>
                     </li>
@@ -53,7 +52,7 @@ include 'php/function.php';
                     <li>
                         <a href="php/logout.php" title="Sair da Minha Sessão">Sair</a>
                     </li>
-                    </li>
+                    <!-- Se o usuário estiver logado, exibir esses links na barra de navegação -->
                 <?php else: ?>
                     <li>
                         <a href="index.php?pagina=form">Cadastre-se</a>
@@ -75,17 +74,18 @@ include 'php/function.php';
                             <input type="submit" value="Entrar" >
                         </form>
                     </li>
+                    <!-- Se o usuário não estiver logado, exibir esses links na barra de navegação -->
                 <?php endif; ?>
             </ul>
-
         </section>
-        <div class="conteudoPrincipal">
-            
+
+        <div class="conteudoPrincipal">            
             <?php
             if (isset($_GET['pagina'])) {
                 include 'php/' . $_GET['pagina'] . '.php';
             }
             ?>
+            <iframe src="https://drive.google.com/embeddedfolderview?id=0B3Mie4L5IVH-VTFoc09VWEx1QUk#list" style="width:700px; height:600px; border:0;"></iframe>
         </div>
     </body>
 </html>
