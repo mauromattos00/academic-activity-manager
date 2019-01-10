@@ -1,5 +1,7 @@
 # Gerenciador de Atividades Acadêmicas
 
+## Sistema Desenvolvido em 2014
+
 Este é o meu projeto final (**e meu primeiro projeto de programação**) no curso de Informática para Internet na Fundação de Apoio à Escola Técnica (FAETEC).
 
 O objetivo era criar um sistema que auxiliasse o usuário a gerenciar suas atividades acadêmicas, como:
